@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: Jwt_service
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: fpsousa
+Implementation-Vendor-Id: Jwt_service
+Build-Jdk: 1.8.0_51
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/Jwt_service
+Created-By: Maven Integration for Eclipse
+
