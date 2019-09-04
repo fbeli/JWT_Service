@@ -18,8 +18,7 @@ public class SpringBootJwtApplicationTests {
 	public void contextLoads() {
 		
 		String password = "password";
-		
-		
+				
 		String encPassword = BCrypt.hashpw(password, BCrypt.gensalt());
 		
 		String defPass = "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6";
