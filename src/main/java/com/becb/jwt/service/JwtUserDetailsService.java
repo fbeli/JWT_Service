@@ -27,19 +27,33 @@ public class JwtUserDetailsService implements UserDetailsService {
 
 	@Autowired
 	private PasswordEncoder bcryptEncoder;
+	
+	@Autowired
+	private com.becb.jwt.dao.UserDao userDao;
 
+	/**
+	 * Onde se busca os dados do usuário no banco
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		if ("javainuse".equals(username)) {
 			UserDetails user =		
 			 new User("javainuse", "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6",
 					new ArrayList<>());
-			
-			
+			//FIXME incluir user 
 			return user;
 		} else {
-			throw new UsernameNotFoundException("User not found with username: " + username);
+			User user =	userDao.getUser(username);	
+					//new User("javainuse", "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6",
+						//	new ArrayList<>());
+			
+			if(null != user) {
+				return user;				
+			}else
+				throw new UsernameNotFoundException("User not found with username: " + username);
 		}
+			
+		
 	}
 
 	

@@ -18,7 +18,7 @@ public class User implements UserDetails {
 		username = string;
 		password = string2;
 	}
-
+	public User() {};
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
